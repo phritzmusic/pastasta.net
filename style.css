@@ -3,13 +3,9 @@
   padding: 0;
 }
 
-h1 {
-  color: rgb(255, 255, 255);
-  text-align: center;
-
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-family: 'Yuji Boku', serif;
-  mix-blend-mode: difference;
+.message {
+  margin-left: 100px;
+  color: rgb(50, 50, 50);
 }
 
 .background-image {
@@ -21,4 +17,17 @@ h1 {
     justify-content: center;
   height: 100vh;
   width: 100%;
+}
+
+.shigoto {
+  margin-top: 40px;
+}
+
+
+.grad {
+  margin-top: 200px;
+  margin-left: 100px;
+  height: 20px;
+  width: 350px;
+  background: linear-gradient(to right, rgb(151,50,27), rgb(212,169,65), rgb(161,181,192), rgb(203,240,220), rgb(97,212,218), rgb(210,210,210));
 }

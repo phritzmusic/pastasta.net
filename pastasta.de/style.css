@@ -1,0 +1,24 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Yuji Boku', serif;
+  mix-blend-mode: difference;
+}
+
+.background-image {
+  background-image: url('pastasta.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display:flex;
+    align-items: center;
+    justify-content: center;
+  height: 100vh;
+  width: 100%;
+}

@@ -24,8 +24,28 @@
   margin-top: 40px;
 }
 
+.vidwrap {
+  width: 100%;
+  max-width: 600px;
+  padding-top: 20px;
+}
+
 .video {
-  margin: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video iframe {
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* transform: scale(0.75); */
 }
 
 .grad {
@@ -38,6 +58,12 @@
 }
 
 .socials {
+  padding-top: 20px;
   font-size: 20px;
-  margin-top: 20px;
+}
+
+@media (max-width: 760px) {
+  * {
+    font-size: 12px;
+  }
 }

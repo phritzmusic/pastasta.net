@@ -5,6 +5,22 @@
   text-decoration: none;
 }
 
+a {
+  color: black;
+  }
+
+a:visited {
+  color: #22252a;
+  }
+
+a:hover {
+  color: #9ea5b3;
+  }
+
+a:active {
+  color: #292c33;
+}
+
 .message {
   color: rgb(50, 50, 50);
 }

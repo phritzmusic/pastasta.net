@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/80e356ee4f.js" crossorigin="anonymous"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400&family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../imgs/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAS TASTA</title>
+
+</head>
+
+  <style>
+
+  /* css */
+
+      * {
+          margin: 0 auto;
+          padding: 0;
+          text-decoration: none;
+      }
+
+      h6 {
+          overflow: hidden;
+          line-height: 1;
+          margin: 0;
+          font-weight: 300;
+          line-height: 15px;
+      }
+
+      h6 span {
+        text-align: left;
+        /* display: block; */
+        /* animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) 0.5s; */
+        transition: 1s;
+      }
+
+      body {
+        height: 100vh;
+        margin: auto;
+      }
+
+      .nav-bar {
+        position: fixed;
+        height: 60px;
+        /* border: solid;
+        border-width: 0 0 0.2px 0;
+        border-color: #bababa; */
+        background-color: rgba(255, 255, 255, 0.3);
+        top: 0;
+        width: 100vw;
+        overflow: hidden;
+        font-family: 'Jost', sans-serif;
+        z-index: 2;
+      }
+
+      .nav-left-elements {
+        position: absolute;
+        display: flex;
+        justify-content: flex-start;
+        margin: 0;
+        /* padding-left: 60px;
+        padding-top: 25px; */
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        padding-left: 2vw;
+
+        font-weight: 300;
+        font-size: 12px;
+      }
+
+      .nav-text {
+        display: flex;
+        height: 100%;
+        margin: 0;
+        align-items: center;
+      }
+
+      .img-container {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        -webkit- transform: translateY(-50%) translateX(-50%);
+        width: 120px;
+        height: 100%;
+        margin: 0;
+        vertical-align: middle;
+        background-image: url("imgs/logo.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .pasta-logo a {
+        height: 100%;
+        width: 100%;
+      }
+
+      .nav-right-elements {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        width: 300px;
+        height: 100%;
+        right: 0;
+        /* padding-left: 40vw; */
+        padding-right: 1vw;
+        align-items: center;
+      }
+
+      .socials {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+      }
+
+      .fa {
+        font-size: 1rem;
+        font-weight: 100;
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .fa:hover {
+        opacity: 0.5;
+        transition: 0.1s;
+      }
+
+      /* .nav-bar a {
+        float: left;
+      } */
+
+      .top {
+        width: 100vw;
+        height: 100vh;
+        transition: 0.4s;
+        padding: 0;
+        margin: 0;
+      }
+
+      .top-left {
+        position: relative;
+        display: block;
+        float: left;
+        width: calc(100%/3);
+        height: 100vh;
+        z-index: 1;
+      }
+
+      #main-msg {
+        display: inline-block;
+        position: relative;
+        float: left;
+        left: 12%;
+        top: 40%;
+        height: 200px;
+        width: 100%;
+        margin: 0;
+        font-family: 'Jost', sans-serif;
+        letter-spacing: 1.4px;
+        opacity: 0;
+        transition: all .8s;
+        animation-delay: 0.4s;
+      }
+
+      /* #main-msg p {
+        color: black;
+        mix-blend-mode: screen;
+      } */
+
+      #sub-text {
+        font-weight: 200;
+        font-size: 10px;
+      }
+
+      #sub-text-2 {
+        font-weight: 200;
+        font-size: 10px;
+      }
+
+      #main-text {
+        font-weight: 600;
+        font-size: 50px;
+      }
+
+      .top-middle {
+        position: relative;
+        display: flex;
+        float: left;
+        width: calc(100%/3);
+        height: 100vh;
+        justify-content: center;
+      }
+
+      .single-item {
+        margin: 0;
+        top: 20%;
+        display: inline-block;
+        float: left;
+        position: relative;
+        width: 600px;
+        height: 60vh;
+      }
+
+      #wrap {
+        position: relative;
+        overflow: hidden;
+      }
+
+      #cover {
+        transform: scale(0.75);
+        height: 500px;
+        width: 500px;
+        -webkit-align-self: center;
+        align-self: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: .8s;
+        background-image: url("imgs/gp_cover.png");
+        cursor: pointer;
+      }
+
+      #cover-2 {
+        display: inline-block;
+        position: relative;
+        transform: scale(0.75);
+        height: 500px;
+        width: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: .8s;
+        background-image: url("");
+        cursor: pointer;
+      }
+
+      #cover:hover {
+        transform: scale(1);
+      }
+
+      #cover-2:hover {
+        transform: scale(1);
+      }
+
+      .top-right {
+        position: relative;
+        display: block;
+        float: left;
+        width: calc(100%/3);
+        height: 100vh;
+      }
+
+      .main {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+
+      .main img {
+        position: absolute;
+        margin: 0;
+        align-items: center;
+        animation-name: rotate-circle;
+        animation-direction: reverse;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        display: inline-block;
+      }
+
+      .left-column {
+        position: relative;
+        display: inline-block;
+        float: left;
+        margin: 0;
+        width: 32vw;
+        height: 100vh;
+        /* background-color: white; */
+        z-index: 1;
+      }
+
+      .right-column {
+        position: relative;
+        display: inline-block;
+        float: right;
+        margin: 0;
+        width: 32vw;
+        height: 100vh;
+        /* background-color: white; */
+        z-index: 1;
+      }
+
+      .box-container {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+      }
+
+      .box {
+        height: 25vh;
+        left: 0;
+        display: inline-block;
+        font-family: 'IBM Plex Sans JP', sans-serif;
+        z-index: -1;
+      }
+
+      @keyframes reveal {
+          0% {
+            transform: translate(0,100%);
+          }
+          100% {
+            transform: translate(0,0);
+          }
+      }
+
+      .text {
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        font-family: 'IBM Plex Sans JP', sans-serif;;
+        fill: #111;
+        font-size: 0.42rem;
+      }
+
+      .description {
+        padding: 20px;
+        height: 100%;
+      }
+
+      .details-scroll {
+        overflow-y: scroll;
+        height: 100%;
+      }
+
+
+      #left {
+        text-align: left;
+      }
+
+      #right {
+      text-align: right;
+    }
+
+      #hirihiri {
+        display: inline-block;
+        margin: 40px;
+        width: 100%;
+        height: 22vh;
+        float: left;
+      }
+
+      #phritz {
+        display: inline-block;
+        margin: 40px;
+        width: 100%;
+        height: 22vh;
+        float: left;
+      }
+
+      #amane {
+        display: inline-block;
+        margin: 40px;
+        width: 100%;
+        height: 22vh;
+        float: left;
+      }
+
+      #kabanagu {
+        display: inline-block;
+        margin: 40px;
+        width: 100%;
+        height: 22vh;
+        float: right;
+      }
+
+      #quoree {
+        display: inline-block;
+        margin: 40px;
+        width: 100%;
+        height: 22vh;
+        float: right;
+      }
+
+      #yuigot {
+        display: inline-block;
+        margin: 40px;
+        width: 100%;
+        height: 22vh;
+        float: right;
+      }
+
+      #rotatingText {
+        animation-name: rotate-circle;
+        animation-duration: 45s;
+        animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      }
+
+      .box-container a:hover {
+        opacity: 0.5;
+        transition: 0.1s;
+      }
+
+      .page-2 {
+        height: 60vh;
+        width: 100vw;
+        position: relative;
+        display: inline-flex;
+      }
+
+      .box-container-2 {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box-container-2 p {
+        margin: 0;
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        font-family: 'IBM Plex Sans JP', sans-serif;;
+        fill: #111;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0.4px;
+      }
+
+      .box-container-3 {
+        height: 100%;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .pt-works {
+        margin: 0;
+        display: inline-block;
+        float: left;
+        position: relative;
+        width: 600px;
+        height: 80%;
+      }
+
+      #work-1 {
+        height: 500px;
+        width: 100%;
+        /* -webkit-align-self: center;
+        align-self: center; */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("https://www.laforet.ne.jp/gb_summer2023/img/home/Ph_KeyVisual_PC.jpg");
+        cursor: pointer;
+      }
+
+      #work-2 {
+        height: 500px;
+        width: 100%;
+        /* -webkit-align-self: center;
+        align-self: center; */
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://lh4.googleusercontent.com/8USY-raDsa7hcKTzSuIrNwHlfKkd1YqldDeWcUa1ul0izbYNXZmdpwVQwGOlK8sCMXrBjxA3Ka21262FVBJKqufB5dPS29ARUMUQTlPTyQH94njgbkALtHHwLJBRzwlCk4-gmb6bq5zN0QkorNjMcRR4_kLp9AZDfnkBf3ZXk2IoR0edIhK90-_W458aFQk=w1200-h630-p-k-no-nu");
+        cursor: pointer;
+      }
+
+      #work-3 {
+        height: 400px;
+        width: 100%;
+        /* -webkit-align-self: center;
+        align-self: center; */
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("https://storage.spincoaster.com/media/2023/04/14194913/good-pop-for-you.jpg");
+        cursor: pointer;
+      }
+
+      .popup-message {
+        display: none;
+        padding: 20px;
+        max-width: 50%;
+        background-color: rgba(255, 255, 255, 0.92);
+
+        border-left: #555555 solid 0.1px;
+
+        /* position: fixed; */
+        width: 300px;
+        height: 280px;
+        z-index: 2;
+        text-align: justify;
+        font-weight: 300;
+        letter-spacing: -0.4px;
+        line-height: 18px;
+        font-size: 10px;
+        font-family: 'IBM Plex Sans JP', sans-serif;
+        overflow: scroll;
+      }
+
+      /* @media (min-width: 761px) {
+        .box {
+          pointer-events: auto;
+        }
+      } */
+
+      @media (max-width: 760px) {
+        .text {
+          font-size: 0.2rem;
+          letter-spacing: 1.44px;
+        }
+
+        .circular-text {
+          font-size: 0.5rem;
+        }
+
+        .left-column {
+          display: none;
+        }
+
+        .right-column {
+          display: none;
+        }
+
+        .popup-message {
+          display: block;
+          position: absolute;
+          padding: 20px;
+          max-width: 50%;
+
+          width: 100%;
+          height: 340px;
+          z-index: 2;
+
+          background-color: rgba(255, 255, 255, 0.92);
+          border-left: #555555 solid 0.1px;
+
+          text-align: justify;
+          font-weight: 300;
+          letter-spacing: -0.4px;
+          line-height: 24px;
+          font-size: 10px;
+          font-family: 'IBM Plex Sans JP', sans-serif;
+          overflow: scroll;
+        }
+
+        .box-container {
+          height: 100vh;
+          width: 100vw;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .fa {
+          font-size: 1.5rem;
+          font-weight: 100;
+          margin: auto;
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          text-decoration: none;
+        }
+
+        .nav-right-elements {
+          display: flex;
+          justify-content: flex-end;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          right: 0;
+          /* padding-left: 40vw; */
+          padding-right: 1vw;
+          align-items: center;
+        }
+
+        .socials {
+          display: flex;
+          height: 100%;
+          width: 300px;
+          margin: 0;
+        }
+
+        .container {
+          max-width: 1050px;
+          width: 90%;
+          margin: auto;
+        }
+
+      }
+
+@keyframes rotate-circle {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+  </style>
+
+
+  <body>
+
+    <div class="nav-bar">
+      <div class="nav-left-elements">
+        <span class="nav-text" id="replace-text" style="background-color:#ffffff; opacity:0.9;">>> featured</span>
+      </div>
+
+      <!-- <div class="pasta-logo"> -->
+        <div class="img-container" id="logo" style="opacity: 1;">
+          <a href="https://pastasta.net"></a>
+        </div>
+      <!-- </div> -->
+
+      <div class="nav-right-elements">
+        <div class="socials">
+          <a href="https://open.spotify.com/artist/38XISC5BMSTkAuKwniV2AS?si=L75g1ozKRwacEJguuH-1gA" class="fa fa-brands fa-spotify"></a>
+          <a href="https://music.apple.com/jp/artist/pas-tasta/1603013989?l" class="fa fa-brands fa-apple"></a>
+          <a href="https://x.com/pas_tasta" class="fa fa-brands fa-x-twitter"></a>
+          <a href="https://instagram.com/pas_tasta" class="fa fa-instagram"></a>
+          <a href="https://www.youtube.com/channel/UCjh4oaDy9WJ7WEb076Ke27g" class="fa fa-youtube"></a>
+          <a href="mailto:pastasta.info@gmail.com"  class="fa fa-envelope"></a>
+          <a href="https://drive.google.com/drive/folders/1ntf7D-AVGUyP78SagdEvW01Q7__htSn-?usp=share_link"  class="fa fa-guitar"></a>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="top">
+      <div class="top-left">
+        <div id="main-msg">
+          <p id="sub-text" style="cursor: default;">1st album</p><br>
+          <p id="main-text" style="cursor: default;">GOOD POP</p><br>
+          <p id="sub-text-2" style="cursor: default;">out now!</p>
+        </div>
+
+      </div>
+      <div class="top-middle">
+
+        <div class="single-item">
+          <a href="https://linkco.re/msP0HmAR" target="_blank" style="height: 100%"><div class="cover" id="cover" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a>
+          <!-- <a  target="_blank" style="height: 100%"><div class="cover" id="cover-2" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a> -->
+        </div>
+
+      </div>
+      <div class="top-right">
+      </div>
+    </div>
+
+    <div class="page-2">
+
+      <div class="box-container-2">
+          <p>『PAS TASTA』 は<br>hirhiri, kabanagu, phritz, quoree, ウ山あまね, yuigot<br>の6人が音楽をする企画です。</p>
+      </div>
+
+      <div class="box-container-3">
+          <div class="pt-works">
+            <a href="https://www.youtube.com/watch?v=cgaYo5Sy8IA" target="_blank" style="height: 100%"><div id="work-2"></div></a>
+            <a href="https://x.com/pas_tasta/status/1676546686955708417?s=20" target="_blank" style="height: 100%"><div id="work-1"></div></a>
+            <a href="https://natalie.mu/music/news/516634" target="_blank"><div id="work-3"></div></a>
+          </div>
+      </div>
+
+    </div>
+
+  <div class="box-container">
+
+    <!-- smartphone pop-up -->
+
+      <div class="popup-message" id="popup-h" style="opacity: 0; transition:0.5s; pointer-events: none;">
+
+          <p class="phone-0" id="left"><a href="https://linktr.ee/hirihiri" target="_blank">hirihiri</a></p><br>
+            <p id="left"><span>recent work:</span></p><br>
+            <p id="left">
+              <a class="phone-1" href="https://www.youtube.com/watch?v=GKfWslHv-HE" target="_blank">valknee　ビート提供・Mixing・Mastering</a><br>
+              <a class="phone-2" href="https://www.youtube.com/watch?v=OVI00jRNNgI&pp=ygUIaGlyaWhpcmk%3D" target="_blank">AOTO - Hey,Nabi! ビート提供・Mixing・Mastering</a><br>
+              <a class="phone-3" href="https://www.youtube.com/watch?v=YjQpRpr30Kc&pp=ygURZGlzcGF0Y2ggc3RhcmtpZHM%3D" target="_blank">STARKIDS - Dispatch (feat. KID TRASH)　ビート提供</a><br>
+              <a class="phone-4" href="https://mitoyamane.jp" target="_blank">映画ミトヤマネ　主題歌作編曲</a><br>
+              <a class="phone-5" href="https://www.youtube.com/watch?v=48mTpRnm3Y0" target="_blank">ペプシBIG〈生〉CM 楽曲制作</a><br>
+              <a class="phone-6" href="https://www.youtube.com/watch?v=Tmqhi4UQOhc&list=PLcPYdiWROoB6Kow6CczrrnhYFoI9kNb_A&index=3&pp=iAQB8AUB" target="_blank">電音部「Brickwall」楽曲提供</a><br>
+              <a class="phone-7" href="https://open.spotify.com/track/3TIe0QyHkIEr8dUZMdAGqO?si=c09bd3252e9e4512" target="_blank">Only U (hirihiri Remix)</a><br>
+              etc.
+            </p><br>
+            <a onclick="openhiri();" style="font-size: 10px; cursor: pointer;">< return</a>
+
+      </div>
+
+      <div class="popup-message" id="popup-p" style="opacity: 0; transition:0.5s; pointer-events: none;">
+
+          <p class="phone-0" id="left"><a href="https://phritzmusic.com" target="_blank">phritz</a></p><br>
+            <p id="left"><span>recent work:</span></p><br>
+            <p id="left">
+              <a href="https://hoshitele-anime.com" target="_blank">TVアニメ『星屑テレパス』ED主題歌「天体図」共同作編曲</a><br>
+                  <a href="https://splice.com/sounds/packs/moment/resonance-botanica-a-phritz-moment" target="_blank">Splice 「Resonance Botanica」サンプルパック提供</a><br>
+                  <a href="https://www.youtube.com/watch?v=rtH-OEJKOdI" target="_blank">厚生労働省 「Butterfly Heart」 楽曲制作</a><br>
+                  <a href="https://www.youtube.com/watch?v=RDd2sD6bXMg&pp=ygUMZGVlbW8gcGhyaXR6" target="_blank">Deemo II 楽曲制作</a><br>
+                  <a href="https://www.instagram.com/p/CtEAqUdPmwZ/" target="_blank">UNIQLO 「Masterpiece」 広告音楽　楽曲制作</a><br>
+                  <a href="https://www.ndc.co.jp/works/we-labo_2023/" target="_blank">okamura 「We Labo」 楽曲制作</a><br>
+                  <a href="https://www.youtube.com/watch?v=FpaRTtqnNS4" target="_blank">チューリッヒ保険会社 「Green Music」 楽曲制作</a><br>
+                  etc.
+            </p><br>
+            <a onclick="openphri();" style="font-size: 10px; cursor: pointer;">< return</a>
+
+      </div>
+
+      <div class="popup-message" id="popup-a" style="opacity: 0; transition:0.5s; pointer-events: none;">
+
+          <p class="phone-0" id="left"><a href="https://linktr.ee/amaneuyama" target="_blank">Amane Uyama</a></p><br>
+            <p id="left"><span>recent work:</span></p><br>
+            <p id="left">
+              <a href="https://809.lnk.to/au_mumuto">ムームート (LP)</a><br>
+                <a href="https://linkco.re/AhDEUZHZ?lang=en" target="_blank">Komono (EP)</a><br>
+                <a href="https://open.spotify.com/track/3TIe0QyHkIEr8dUZMdAGqO?si=c09bd3252e9e4512" target="_blank">長瀬有花 - アフターユ 作詞・作編曲</a><br>
+                <a href="https://open.spotify.com/track/3E3RNYYW2ubOICvPeyiVpT?si=831485204cdc4b8b" target="_blank">バスクのスポーツ - Exodus (ウ山あまね Remix)</a><br>
+                <a href="https://open.spotify.com/track/77JclJOMq2HzcKpelYjucm?si=4e1e1c9633d240c2&nd=1" target="_blank">RYUTist - mizugarasu (ウ山あまね Remix)</a><br>
+                <a href="https://open.spotify.com/track/2ok0AStBZeq9ujzQF1AwCc?si=60d1ea78f23d4a71" target="_blank">RYUTist - たったいま:さっきまで　作詞・作編曲</a><br>
+                <a href="https://www.youtube.com/watch?si=YrfCKtJZNwjiBWRM&v=46rQy6Wl6Wk&feature=youtu.be" target="_blank">ワールドフリッパー イベント「降臨討伐 威風の精霊獣」BGM 作編曲</a><br>
+                etc.
+            </p><br>
+            <a onclick="openama();" style="font-size: 10px; cursor: pointer;">< return</a>
+
+      </div>
+
+      <div class="popup-message" id="popup-k" style="opacity: 0; transition:0.5s; pointer-events: none;">
+
+          <p class="phone-0" id="left"><a href="https://linktr.ee/kabanagu" target="_blank">Kabanagu</a></p><br>
+            <p id="left"><span>recent work:</span></p><br>
+            <p id="left">
+              <a href="https://linkco.re/3DHNTyPM?lang=en" target="_blank">ほぼゆめ (LP)</a><br>
+              <a href="https://linkco.re/QdsB53nM?lang=en" target="_blank">泳ぐ真似 (LP)</a><br>
+              <a href="https://www.youtube.com/watch?v=rIIcPqROMxo&feature=youtu.be" target="_blank">ヤマハ VOCALOID "VX -β" PR楽曲「丘にいる」作詞・作編曲・Mixing</a><br>
+              <a href="https://www.youtube.com/watch?v=uLyrQCxqvq8&feature=youtu.be" target="_blank">Amazon Music HEAT PR楽曲 「想像上のスピード」 作詞・作編曲</a><br>
+              <a href="https://www.youtube.com/watch?v=78AtDzQW1JQ&feature=youtu.be" target="_blank">崎山蒼志 - 覚えていたのに 編曲・Mixing</a><br>
+              <a href="https://twitter.com/Tamio/status/1597908583877726209" target="_blank">PUMA × GraphersRock CM 楽曲提供</a><br>
+              etc.
+            </p><br>
+            <a onclick="openkaba();" style="font-size: 10px; cursor: pointer;">< return</a>
+
+      </div>
+
+      <div class="popup-message" id="popup-q" style="opacity: 0; transition:0.5s; pointer-events: none;">
+
+          <p class="phone-0" id="left"><a href="https://linktr.ee/nquoree" target="_blank">quoree</a></p><br>
+            <p id="left"><span>recent work:</span></p><br>
+            <p id="left">
+              <a href="https://orcd.co/l_d_k">Pedestrian - flare (quoree EDITION)</a><br>
+              <a href="https://www.youtube.com/watch?si=YIArF4WuX0hVnQpL&v=Ul6wgtZ4yKY&feature=youtu.be" target="_blank">チューリッヒ保険会社「Green Music」楽曲提供</a><br>
+              <a href="https://linkco.re/SA9s60Bh?lang=en" target="_blank">in the blue shirt - Cast Off (quoree Remix)</a><br>
+              <a href="https://twitter.com/mng_clothing/status/1597878106408325121?s=20" target="_blank">電音部 - Love me harder (feat. Shogo & 早川博隆) [quoree Remix]</a><br>
+              etc.
+            </p><br>
+            <a onclick="openquo();" style="font-size: 10px; cursor: pointer;">< return</a>
+
+      </div>
+
+      <div class="popup-message" id="popup-y" style="opacity: 0; transition:0.5s; pointer-events: none;">
+
+          <p class="phone-0" id="left"><a href="https://linktr.ee/yuigot" target="_blank">yuigot</a></p><br>
+            <p id="left"><span>recent work:</span></p><br>
+            <p id="left">
+              <a href="https://youtu.be/i8adbqn6ZAo?si=dPugOPN0ZE7xn2aD" target="_blank">yuigot +長谷川白紙 - 音がする</a><br>
+              <a href="https://www.youtube.com/watch?si=JhlLXSOjD-Xpzvpu&v=s7BJ2NqbXrM&feature=youtu.be" target="_blank">稲葉曇 - ロストアンブレラ (yuigot Remix)</a><br>
+              <a href="https://open.spotify.com/track/0PHOHNouSJTBrtLsC1dOuR?si=c1117d5955a84512" target="_blank">harmoe - 一寸先は光 作詞・作編曲</a><br>
+              <a href="https://open.spotify.com/track/1aEygxjaChqvZFdatQZj0N?si=9e27a1c74c164d2f&nd=1" target="_blank">安野希世乃 - エトセトラ 作編曲</a><br>
+              <a href="https://www.youtube.com/watch?si=1iPnSeeI1UGMV_bw&v=bxZRHXO5-m0&feature=youtu.be" target="_blank">菅原圭 - シャワールームランデブー 編曲</a><br>
+              <a href="https://vimeo.com/506641459" target="_blank">JR東日本 START! New 通勤 Style CM 楽曲制作</a><br>
+              etc.
+            </p><br>
+            <a onclick="openyui();" style="font-size: 10px; cursor: pointer;">< return</a>
+
+      </div>
+
+    <!-- smartphone pop-up end -->
+
+    <div class="left-column">
+
+      <div class="box" id="hirihiri" style="opacity:0; transition:0.5s;">
+        <div class="description">
+          <p id="left"><a href="https://linktr.ee/hirihiri" target="_blank">hirihiri</a></p><br>
+          <div class="details-scroll">
+            <h6 id="left"><span>recent work:</span></h6><br>
+            <h6 id="left"><a href="https://www.youtube.com/watch?v=GKfWslHv-HE" target="_blank">valknee　ビート提供・Mixing・Mastering</a><br>
+              <a href="https://www.youtube.com/watch?v=OVI00jRNNgI&pp=ygUIaGlyaWhpcmk%3D" target="_blank">AOTO - Hey,Nabi! ビート提供・Mixing・Mastering</a><br>
+              <a href="https://www.youtube.com/watch?v=YjQpRpr30Kc&pp=ygURZGlzcGF0Y2ggc3RhcmtpZHM%3D" target="_blank">STARKIDS - Dispatch (feat. KID TRASH)　ビート提供</a><br>
+              <a href="https://mitoyamane.jp" target="_blank">映画ミトヤマネ　主題歌作編曲</a><br>
+              <a href="https://www.youtube.com/watch?v=48mTpRnm3Y0" target="_blank">ペプシBIG〈生〉CM『もれなく全額返金シール服』篇 やす子 　楽曲制作</a><br>
+              <a href="https://www.youtube.com/watch?v=Tmqhi4UQOhc&list=PLcPYdiWROoB6Kow6CczrrnhYFoI9kNb_A&index=3&pp=iAQB8AUB" target="_blank">電音部「Brickwall」楽曲提供</a><br>
+              <a href="https://open.spotify.com/track/3TIe0QyHkIEr8dUZMdAGqO?si=c09bd3252e9e4512" target="_blank">Only U (hirihiri Remix)</a><br>
+              etc.
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="box" id="phritz" style="opacity:0; transition:0.5s;">
+        <div class="description">
+          <p id="left"><a href="https://phritzmusic.com" target="_blank">phritz</a></p><br>
+            <div class="details-scroll">
+              <h6 id="left"><span>recent work:</span></h6><br>
+              <h6 id="left"><a href="https://hoshitele-anime.com" target="_blank">TVアニメ『星屑テレパス』ED主題歌「天体図」共同作編曲</a><br>
+                  <a href="https://splice.com/sounds/packs/moment/resonance-botanica-a-phritz-moment" target="_blank">Splice 「Resonance Botanica」サンプルパック提供</a><br>
+                  <a href="https://www.youtube.com/watch?v=rtH-OEJKOdI" target="_blank">厚生労働省 「Butterfly Heart」 楽曲制作</a><br>
+                  <a href="https://www.youtube.com/watch?v=RDd2sD6bXMg&pp=ygUMZGVlbW8gcGhyaXR6" target="_blank">Deemo II 楽曲制作</a><br>
+                  <a href="https://www.instagram.com/p/CtEAqUdPmwZ/" target="_blank">UNIQLO 「Masterpiece」 広告音楽　楽曲制作</a><br>
+                  <a href="https://www.ndc.co.jp/works/we-labo_2023/" target="_blank">okamura 「We Labo」 楽曲制作</a><br>
+                  <a href="https://www.youtube.com/watch?v=FpaRTtqnNS4" target="_blank">チューリッヒ保険会社 「Green Music」 楽曲制作</a><br>
+                  etc.</h6>
+            </div>
+          </div>
+        </div>
+
+      <div class="box" id="amane" style="opacity:0; transition:0.5s;">
+          <div class="description">
+            <p id="left"><a href="https://linktr.ee/amaneuyama" target="_blank">Amane Uyama</a></p><br>
+            <div class="details-scroll">
+              <h6 id="left"><span>recent work:</span></h6><br>
+              <h6 id="left"><a href="https://809.lnk.to/au_mumuto">ムームート (LP)</a><br>
+                <a href="https://linkco.re/AhDEUZHZ?lang=en" target="_blank">Komono (EP)</a><br>
+                <a href="https://open.spotify.com/track/3TIe0QyHkIEr8dUZMdAGqO?si=c09bd3252e9e4512" target="_blank">長瀬有花 - アフターユ 作詞・作編曲</a><br>
+                <a href="https://open.spotify.com/track/3E3RNYYW2ubOICvPeyiVpT?si=831485204cdc4b8b" target="_blank">バスクのスポーツ - Exodus (ウ山あまね Remix)</a><br>
+                <a href="https://open.spotify.com/track/77JclJOMq2HzcKpelYjucm?si=4e1e1c9633d240c2&nd=1" target="_blank">RYUTist - mizugarasu (ウ山あまね Remix)</a><br>
+                <a href="https://open.spotify.com/track/2ok0AStBZeq9ujzQF1AwCc?si=60d1ea78f23d4a71" target="_blank">RYUTist - たったいま:さっきまで　作詞・作編曲</a><br>
+                <a href="https://www.youtube.com/watch?si=YrfCKtJZNwjiBWRM&v=46rQy6Wl6Wk&feature=youtu.be" target="_blank">ワールドフリッパー イベント「降臨討伐 威風の精霊獣」BGM 作編曲</a><br>
+                etc.</h6>
+              </div>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="right-column">
+
+      <div class="box" id="kabanagu" style="opacity:0; transition:0.5s;">
+        <div class="description">
+        <p id="right"><a href="https://linktr.ee/kabanagu" target="_blank">Kabanagu</a></p><br>
+        <div class="details-scroll">
+        <h6 id="right"><span>recent work:</span></h6><br>
+        <h6 id="right"><a href="https://linkco.re/3DHNTyPM?lang=en" target="_blank">ほぼゆめ (LP)</a><br>
+        <a href="https://linkco.re/QdsB53nM?lang=en" target="_blank">泳ぐ真似 (LP)</a><br>
+        <a href="https://www.youtube.com/watch?v=rIIcPqROMxo&feature=youtu.be" target="_blank">ヤマハ VOCALOID "VX -β" PR楽曲「丘にいる」作詞・作編曲・Mixing</a><br>
+        <a href="https://www.youtube.com/watch?v=uLyrQCxqvq8&feature=youtu.be" target="_blank">Amazon Music HEAT PR楽曲 「想像上のスピード」 作詞・作編曲</a><br>
+        <a href="https://www.youtube.com/watch?v=78AtDzQW1JQ&feature=youtu.be" target="_blank">崎山蒼志 - 覚えていたのに 編曲・Mixing</a><br>
+        <a href="https://twitter.com/Tamio/status/1597908583877726209" target="_blank">PUMA × GraphersRock CM 楽曲提供</a><br>
+        etc.
+        </h6>
+      </div> </div> </div>
+
+      <div class="box" id="quoree" style="opacity:0; transition:0.5s;">
+          <div class="description">
+          <p id="right"><a href="https://linktr.ee/nquoree" target="_blank">quoree</a></p><br>
+            <div class="details-scroll">
+                <h6 id="right"><span>recent work:</span></h6><br>
+                <h6 id="right"><a href="https://orcd.co/l_d_k">Pedestrian - flare (quoree EDITION)</a><br>
+                <a href="https://www.youtube.com/watch?si=YIArF4WuX0hVnQpL&v=Ul6wgtZ4yKY&feature=youtu.be" target="_blank">チューリッヒ保険会社「Green Music」楽曲提供</a><br>
+                <a href="https://linkco.re/SA9s60Bh?lang=en" target="_blank">in the blue shirt - Cast Off (quoree Remix)</a><br>
+                <a href="https://twitter.com/mng_clothing/status/1597878106408325121?s=20" target="_blank">電音部 - Love me harder (feat. Shogo & 早川博隆) [quoree Remix]</a><br>
+                etc.
+                </h6>
+            </div>
+          </div>
+      </div>
+
+      <div class="box" id="yuigot" style="opacity:0; transition:0.5s;">
+
+        <div class="description">
+        <p id="right"><a href="https://linktr.ee/yuigot" target="_blank">yuigot</a></p><br>
+        <div class="details-scroll">
+        <h6 id="right"><span>recent work:</span></h6><br>
+        <h6 id="right"><a href="https://youtu.be/i8adbqn6ZAo?si=dPugOPN0ZE7xn2aD" target="_blank">yuigot +長谷川白紙 - 音がする</a><br>
+        <a href="https://www.youtube.com/watch?si=JhlLXSOjD-Xpzvpu&v=s7BJ2NqbXrM&feature=youtu.be" target="_blank">稲葉曇 - ロストアンブレラ (yuigot Remix)</a><br>
+        <a href="https://open.spotify.com/track/0PHOHNouSJTBrtLsC1dOuR?si=c1117d5955a84512" target="_blank">harmoe - 一寸先は光 作詞・作編曲</a><br>
+        <a href="https://open.spotify.com/track/1aEygxjaChqvZFdatQZj0N?si=9e27a1c74c164d2f&nd=1" target="_blank">安野希世乃 - エトセトラ 作編曲</a><br>
+        <a href="https://www.youtube.com/watch?si=1iPnSeeI1UGMV_bw&v=bxZRHXO5-m0&feature=youtu.be" target="_blank">菅原圭 - シャワールームランデブー 編曲</a><br>
+        <a href="https://vimeo.com/506641459" target="_blank">JR東日本 START! New 通勤 Style CM 楽曲制作</a><br>
+        etc.
+        </h6>
+        </div> </div> </div>
+
+    </div>
+
+    <div class="main">
+        <img src="imgs/icon.png" width="80" height="80">
+        <svg id="rotatingText" viewBox="0 0 200 200" width="400" height="400">
+      <defs>
+        <path id="circle" d="M 100, 100
+            m -75, 0
+            a 75, 75 0 1, 0 150, 0
+            a 75, 75 0 1, 0 -150, 0
+            ">
+          </path>
+      </defs>
+
+
+        <text width="400">
+        <textPath alignment-baseline="top" xlink:href="#circle" class="text">
+          <a onclick="openhiri();" class="circular-text" style="cursor: pointer;">hirihiri</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a onclick="openkaba();" class="circular-text" style="cursor: pointer;">Kabanagu</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a onclick="openphri();" class="circular-text" style="cursor: pointer;">phritz</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a onclick="openquo();" class="circular-text" style="cursor: pointer;">quoree</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a onclick="openama();" class="circular-text" style="cursor: pointer;">Amane Uyama</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a onclick="openyui();" class="circular-text" style="cursor: pointer;"> yuigot </a>
+        </textPath>
+      </text>
+      </svg>
+    </div>
+
+  </div>
+
+
+  </body>
+
+</html>

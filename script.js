@@ -4,7 +4,16 @@
       const checkpoint3 = 800;
 
 
-window.addEventListener("scroll", () => {
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector(".socials").style.opacity = 0;
+      });
+
+        window.onbeforeunload = function () {
+          window.scrollTo(0, 0);
+        };
+
+      window.addEventListener("scroll", () => {
+
         var replacetext = document.querySelector('#replace-text');
         const currentScroll = window.pageYOffset;
 
@@ -14,23 +23,35 @@ window.addEventListener("scroll", () => {
           logo = 1 - currentScroll / checkpoint2 ;
           replacetext.innerHTML = ">> featured";
 
-        } else if (currentScroll <= checkpoint3) {
+        } else  {
           replacetext.innerHTML = ">> PAS TASTA works";
           social = currentScroll / checkpoint2 - 1 ;
           logo = 0;
-
-        } else {
           opacity = 0;
-          replacetext.innerHTML = ">> individual works";
         }
+        //   else {
+        //   replacetext.innerHTML = ">> individual works";
+        // }
         document.querySelector(".top").style.opacity = opacity;
         document.querySelector("#logo").style.opacity = logo;
-        document.querySelector(".nav-right-elements").style.opacity = social;
+        document.querySelector(".socials").style.opacity = social;
       });
 
-window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-      }
+      window.addEventListener("scroll", () => {
+              var replacetext = document.querySelector('#replace-text');
+              const currentScroll = window.pageYOffset;
+
+              if (currentScroll <= checkpoint2) {
+                replacetext.innerHTML = ">> featured";
+
+              } else if (currentScroll <= checkpoint3) {
+                replacetext.innerHTML = ">> PAS TASTA works";
+              }
+                else {
+                replacetext.innerHTML = ">> individual works";
+              }
+            });
+
 
 function mouseon() {
   const cover = document.getElementById("main-msg");
@@ -165,13 +186,14 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $(".cover").on('mouseenter', function() {
+    $(".cover").on('mouseenter', function() {
+    // $('slick-dots').on('click', function() {
 
     var currentSlide = $('.single-item').slick('slickCurrentSlide');
 
     if (currentSlide === 1) {
-          $('#sub-text').text('remix album');
-          $('#main-text').text('GOOD POP REMIXES');
+          $('#sub-text').text('');
+          $('#main-text').text('');
           $('#sub-text-2').text('coming soon...');
 
         } else {
@@ -179,5 +201,5 @@ $(document).ready(function(){
           $('#main-text').text('GOOD POP');
           $('#sub-text-2').text('out now!');
         }
-  });
+    });
 });

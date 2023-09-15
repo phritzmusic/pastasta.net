@@ -66,6 +66,9 @@
         overflow: hidden;
         font-family: 'Jost', sans-serif;
         z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .nav-left-elements {
@@ -92,15 +95,14 @@
       }
 
       .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translateY(-50%) translateX(-50%);
-        -webkit- transform: translateY(-50%) translateX(-50%);
-        width: 120px;
+        width: 80px;
         height: 100%;
         margin: 0;
-        vertical-align: middle;
+        background-position: center;
         background-image: url("imgs/logo.png");
         background-repeat: no-repeat;
         background-size: contain;
@@ -131,16 +133,6 @@
       }
 
       .fa {
-        font-size: 1rem;
-        font-weight: 100;
-        margin: auto;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        text-decoration: none;
-      }
-
-    .fa-solid {
         font-size: 1rem;
         margin: auto;
         width: 30px;
@@ -259,14 +251,6 @@
         transition: .8s;
         background-image: url("");
         cursor: pointer;
-      }
-
-      #cover:hover {
-        transform: scale(1);
-      }
-
-      #cover-2:hover {
-        transform: scale(1);
       }
 
       .top-right {
@@ -539,13 +523,46 @@
         overflow: scroll;
       }
 
-      /* @media (min-width: 761px) {
-        .box {
-          pointer-events: auto;
+      @media (min-width: 761px) {
+
+        @keyframes rotate-circle {
+          to {
+            transform: rotate(1turn);
+          }
         }
-      } */
+
+        #cover:hover {
+          transform: scale(1);
+        }
+
+        #cover-2:hover {
+          transform: scale(1);
+        }
+
+        .smartphone-msg {
+          display: none;
+        }
+
+      }
 
       @media (max-width: 760px) {
+
+        #main-msg {
+            display: none;
+        }
+
+        .smartphone-msg {
+          position: fixed;
+          height: 100px;
+          width: 300px;
+          top: 10%;
+          left: calc(50vw - (width / 2));
+
+          font-family: 'Jost', sans-serif;
+          letter-spacing: 1.4px;
+          transform: scale(50%);
+        }
+
         .text {
           font-size: 0.2rem;
           letter-spacing: 1.44px;
@@ -596,12 +613,34 @@
 
         .fa {
           font-size: 1.5rem;
-          font-weight: 100;
           margin: auto;
           width: 30px;
           height: 30px;
           text-align: center;
           text-decoration: none;
+        }
+
+        .nav-left-elements {
+          position: absolute;
+          display: flex;
+          justify-content: flex-start;
+          margin: 0;
+          /* padding-left: 60px;
+          padding-top: 25px; */
+          width: 100%;
+          height: 100%;
+          text-align: left;
+          padding-left: 2vw;
+          left: 20px;
+        }
+
+        .nav-text {
+          display: flex;
+          height: 100%;
+          margin: 0;
+          align-items: center;
+          font-size: 8px;
+          font-weight: 200;
         }
 
         .nav-right-elements {
@@ -614,10 +653,12 @@
           /* padding-left: 40vw; */
           padding-right: 1vw;
           align-items: center;
+          transition: 0.8s;
         }
 
         .socials {
           display: flex;
+          opacity: 0;
           height: 100%;
           width: 300px;
           margin: 0;
@@ -631,11 +672,39 @@
 
       }
 
-@keyframes rotate-circle {
-  to {
-    transform: rotate(1turn);
-  }
-}
+      .box-container-2 {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        margin: 25px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box-container-2 p {
+        margin: 0;
+        font-weight: 400;
+        font-family: 'IBM Plex Sans JP', sans-serif;;
+        fill: #111;
+        font-size: 0.6rem;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: -0.4px;
+      }
+
+      .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 80px;
+        height: 100%;
+        margin: 0;
+        background-position: center;
+        background-image: url("imgs/logo.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
 
   </style>
 
@@ -661,7 +730,7 @@
           <a href="https://instagram.com/pas_tasta" class="fa fa-instagram"></a>
           <a href="https://www.youtube.com/channel/UCjh4oaDy9WJ7WEb076Ke27g" class="fa fa-youtube"></a>
           <a href="mailto:pastasta.info@gmail.com"  class="fa fa-envelope"></a>
-          <a href="https://drive.google.com/drive/folders/1ntf7D-AVGUyP78SagdEvW01Q7__htSn-?usp=share_link"  class="fa-solid fa-guitar"></a>
+          <a href="https://drive.google.com/drive/folders/1ntf7D-AVGUyP78SagdEvW01Q7__htSn-?usp=share_link"  class="fa fa-guitar"></a>
         </div>
 
       </div>
@@ -677,10 +746,16 @@
 
       </div>
       <div class="top-middle">
+        <!-- <div class="smartphone-msg">
+          <p id="sub-text" style="cursor: default;">1st album</p><br>
+          <p id="main-text" style="cursor: default;">GOOD POP</p><br>
+          <p id="sub-text-2" style="cursor: default;">out now!</p>
+        </div> -->
 
         <div class="single-item">
           <a href="https://linkco.re/msP0HmAR" target="_blank" style="height: 100%"><div class="cover" id="cover" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a>
-          <!-- <a  target="_blank" style="height: 100%"><div class="cover" id="cover-2" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a> -->
+          <!-- <a href="#" target="_blank" style="height: 100%"><div class="cover" id="cover-2" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a>
+          <a href="#" target="_blank" style="height: 100%"><div class="cover" id="cover-2" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a> -->
         </div>
 
       </div>
@@ -784,7 +859,7 @@
           <p class="phone-0" id="left"><a href="https://linktr.ee/nquoree" target="_blank">quoree</a></p><br>
             <p id="left"><span>recent work:</span></p><br>
             <p id="left">
-              <a href="https://orcd.co/l_d_k">歩く人 - flare (quoree EDITION)</a><br>
+              <a href="https://orcd.co/l_d_k">Pedestrian - flare (quoree EDITION)</a><br>
               <a href="https://www.youtube.com/watch?si=YIArF4WuX0hVnQpL&v=Ul6wgtZ4yKY&feature=youtu.be" target="_blank">チューリッヒ保険会社「Green Music」楽曲提供</a><br>
               <a href="https://linkco.re/SA9s60Bh?lang=en" target="_blank">in the blue shirt - Cast Off (quoree Remix)</a><br>
               <a href="https://twitter.com/mng_clothing/status/1597878106408325121?s=20" target="_blank">電音部 - Love me harder (feat. Shogo & 早川博隆) [quoree Remix]</a><br>
@@ -891,7 +966,7 @@
           <p id="right"><a href="https://linktr.ee/nquoree" target="_blank">quoree</a></p><br>
             <div class="details-scroll">
                 <h6 id="right"><span>recent work:</span></h6><br>
-                <h6 id="right"><a href="https://orcd.co/l_d_k">歩く人 - flare (quoree EDITION)</a><br>
+                <h6 id="right"><a href="https://orcd.co/l_d_k">Pedestrian - flare (quoree EDITION)</a><br>
                 <a href="https://www.youtube.com/watch?si=YIArF4WuX0hVnQpL&v=Ul6wgtZ4yKY&feature=youtu.be" target="_blank">チューリッヒ保険会社「Green Music」楽曲提供</a><br>
                 <a href="https://linkco.re/SA9s60Bh?lang=en" target="_blank">in the blue shirt - Cast Off (quoree Remix)</a><br>
                 <a href="https://twitter.com/mng_clothing/status/1597878106408325121?s=20" target="_blank">電音部 - Love me harder (feat. Shogo & 早川博隆) [quoree Remix]</a><br>

@@ -28,7 +28,7 @@
 
   /* css */
 
-      * {
+       * {
           margin: 0 auto;
           padding: 0;
           text-decoration: none;
@@ -66,9 +66,6 @@
         overflow: hidden;
         font-family: 'Jost', sans-serif;
         z-index: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
 
       .nav-left-elements {
@@ -95,14 +92,15 @@
       }
 
       .img-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         position: absolute;
-        width: 80px;
+        top: 70%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        -webkit- transform: translateY(-50%) translateX(-50%);
+        width: 120px;
         height: 100%;
         margin: 0;
-        background-position: center;
+        vertical-align: middle;
         background-image: url("imgs/logo.png");
         background-repeat: no-repeat;
         background-size: contain;
@@ -134,6 +132,17 @@
 
       .fa {
         font-size: 1rem;
+        font-weight: 100;
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+    .fa-solid {
+        font-size: 1rem;
+        font-weight: 100;
         margin: auto;
         width: 30px;
         height: 30px;
@@ -180,6 +189,7 @@
         letter-spacing: 1.4px;
         opacity: 0;
         transition: all .8s;
+        -webkit-animation-delay: 0.4s;
         animation-delay: 0.4s;
       }
 
@@ -253,6 +263,14 @@
         cursor: pointer;
       }
 
+      #cover:hover {
+        transform: scale(1);
+      }
+
+      #cover-2:hover {
+        transform: scale(1);
+      }
+
       .top-right {
         position: relative;
         display: block;
@@ -279,9 +297,13 @@
         margin: 0;
         align-items: center;
         animation-name: rotate-circle;
+        -webkit-animation-direction: reverse;
         animation-direction: reverse;
+        -webkit-animation-duration: 30s;
         animation-duration: 30s;
+        -webkit-animation-timing-function: linear;
         animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
         display: inline-block;
       }
@@ -411,9 +433,12 @@
 
       #rotatingText {
         animation-name: rotate-circle;
+        -webkit-animation-duration: 45s;
         animation-duration: 45s;
+        -webkit-animation-timing-function: linear;
         animation-timing-function: linear;
-      animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
       }
 
       .box-container a:hover {

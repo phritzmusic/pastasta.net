@@ -1,4 +1,0 @@
-[.htaccess”] 
-RewriteEngine On 
-RewriteCond %{http_host} ^www.pastasta.net/gpr 
-RewriteRule ^(.*) https://https://linkco.re/7myAPy8D/$1 [R=301,L]

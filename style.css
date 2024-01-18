@@ -1137,7 +1137,6 @@ a:active {
 @media (max-width: 760px) {
   * {
     font-size: 1rem;
-     pointer-events: none;
   }
   .intro-large p {
     font-size: 2.5rem;

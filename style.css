@@ -1144,4 +1144,8 @@ a:active {
     word-break: break-word;
     line-height: 1.1em;
   }
+
+   .text {
+    letter-spacing: 0.06rem;
+  }
 }

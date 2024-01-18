@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400&family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../imgs/favicon.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
@@ -28,709 +29,6 @@
 
   /* css */
 
-       * {
-          margin: 0 auto;
-          padding: 0;
-          text-decoration: none;
-      }
-
-      h6 {
-          overflow: hidden;
-          line-height: 1;
-          margin: 0;
-          font-weight: 300;
-          line-height: 15px;
-      }
-
-      h6 span {
-        text-align: left;
-        /* display: block; */
-        /* animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) 0.5s; */
-        transition: 1s;
-      }
-
-      body {
-        height: 100vh;
-        margin: auto;
-      }
-
-      .nav-bar {
-        position: fixed;
-        height: 60px;
-        /* border: solid;
-        border-width: 0 0 0.2px 0;
-        border-color: #bababa; */
-        background-color: rgba(255, 255, 255, 0.3);
-        top: 0;
-        width: 100vw;
-        overflow: hidden;
-        font-family: 'Jost', sans-serif;
-        z-index: 2;
-      }
-
-      .nav-left-elements {
-        position: absolute;
-        display: flex;
-        justify-content: flex-start;
-        margin: 0;
-        /* padding-left: 60px;
-        padding-top: 25px; */
-        width: 100%;
-        height: 100%;
-        text-align: left;
-        padding-left: 2vw;
-
-        font-weight: 300;
-        font-size: 12px;
-      }
-
-      .nav-text {
-        display: flex;
-        height: 100%;
-        margin: 0;
-        align-items: center;
-      }
-
-      .img-container {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translateY(-50%) translateX(-50%);
-        -webkit- transform: translateY(-50%) translateX(-50%);
-        width: 120px;
-        height: 100%;
-        margin: 0;
-        vertical-align: middle;
-        background-image: url("imgs/logo.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-
-      .pasta-logo a {
-        height: 100%;
-        width: 100%;
-      }
-
-      .nav-right-elements {
-        display: flex;
-        justify-content: flex-end;
-        position: absolute;
-        width: 300px;
-        height: 100%;
-        right: 0;
-        /* padding-left: 40vw; */
-        padding-right: 1vw;
-        align-items: center;
-      }
-
-      .socials {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-      }
-
-      .fa {
-        font-size: 1rem;
-        font-weight: 100;
-        margin: auto;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        text-decoration: none;
-      }
-
-    .fa-solid {
-        font-size: 1rem;
-        font-weight: 100;
-        margin: auto;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        text-decoration: none;
-      }
-
-      .fa:hover {
-        opacity: 0.5;
-        transition: 0.1s;
-      }
-
-      /* .nav-bar a {
-        float: left;
-      } */
-
-      .top {
-        width: 100vw;
-        height: 100vh;
-        transition: 0.4s;
-        padding: 0;
-        margin: 0;
-      }
-
-      .top-left {
-        position: relative;
-        display: block;
-        float: left;
-        width: calc(100%/3);
-        height: 100vh;
-        z-index: 1;
-      }
-
-      #main-msg {
-        display: inline-block;
-        position: relative;
-        float: left;
-        left: 12%;
-        top: 40%;
-        height: 200px;
-        width: 100%;
-        margin: 0;
-        font-family: 'Jost', sans-serif;
-        letter-spacing: 1.4px;
-        opacity: 0;
-        transition: all .8s;
-        -webkit-animation-delay: 0.4s;
-        animation-delay: 0.4s;
-      }
-
-      /* #main-msg p {
-        color: black;
-        mix-blend-mode: screen;
-      } */
-
-      #sub-text {
-        font-weight: 200;
-        font-size: 10px;
-      }
-
-      #sub-text-2 {
-        font-weight: 200;
-        font-size: 10px;
-      }
-
-      #main-text {
-        font-weight: 600;
-        font-size: 50px;
-      }
-
-      .top-middle {
-        position: relative;
-        display: flex;
-        float: left;
-        width: calc(100%/3);
-        height: 100vh;
-        justify-content: center;
-      }
-
-      .single-item {
-        margin: 0;
-        top: 20%;
-        display: inline-block;
-        float: left;
-        position: relative;
-        width: 600px;
-        height: 60vh;
-      }
-
-      #wrap {
-        position: relative;
-        overflow: hidden;
-      }
-
-      #cover {
-        transform: scale(0.75);
-        height: 500px;
-        width: 500px;
-        -webkit-align-self: center;
-        align-self: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        transition: .8s;
-        background-image: url("imgs/gp_cover.png");
-        cursor: pointer;
-      }
-
-      #cover-2 {
-        display: inline-block;
-        position: relative;
-        transform: scale(0.75);
-        height: 500px;
-        width: 500px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        transition: .8s;
-        background-image: url("");
-        cursor: pointer;
-      }
-
-      #cover:hover {
-        transform: scale(1);
-      }
-
-      #cover-2:hover {
-        transform: scale(1);
-      }
-
-      .top-right {
-        position: relative;
-        display: block;
-        float: left;
-        width: calc(100%/3);
-        height: 100vh;
-      }
-
-      .main {
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        z-index: 1;
-      }
-
-      .main img {
-        position: absolute;
-        margin: 0;
-        align-items: center;
-        animation-name: rotate-circle;
-        -webkit-animation-direction: reverse;
-        animation-direction: reverse;
-        -webkit-animation-duration: 30s;
-        animation-duration: 30s;
-        -webkit-animation-timing-function: linear;
-        animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        display: inline-block;
-      }
-
-      .left-column {
-        position: relative;
-        display: inline-block;
-        float: left;
-        margin: 0;
-        width: 32vw;
-        height: 100vh;
-        /* background-color: white; */
-        z-index: 1;
-      }
-
-      .right-column {
-        position: relative;
-        display: inline-block;
-        float: right;
-        margin: 0;
-        width: 32vw;
-        height: 100vh;
-        /* background-color: white; */
-        z-index: 1;
-      }
-
-      .box-container {
-        height: 100vh;
-        width: 100vw;
-        position: absolute;
-        /* display: flex;
-        align-items: center;
-        justify-content: center; */
-      }
-
-      .box {
-        height: 25vh;
-        left: 0;
-        display: inline-block;
-        font-family: 'IBM Plex Sans JP', sans-serif;
-        z-index: -1;
-      }
-
-      @keyframes reveal {
-          0% {
-            transform: translate(0,100%);
-          }
-          100% {
-            transform: translate(0,0);
-          }
-      }
-
-      .text {
-        font-weight: 400;
-        letter-spacing: 0.6px;
-        font-family: 'IBM Plex Sans JP', sans-serif;;
-        fill: #111;
-        font-size: 0.42rem;
-      }
-
-      .description {
-        padding: 20px;
-        height: 100%;
-      }
-
-      .details-scroll {
-        overflow-y: scroll;
-        height: 100%;
-      }
-
-
-      #left {
-        text-align: left;
-      }
-
-      #right {
-      text-align: right;
-    }
-
-      #hirihiri {
-        display: inline-block;
-        margin: 40px;
-        width: 100%;
-        height: 22vh;
-        float: left;
-      }
-
-      #phritz {
-        display: inline-block;
-        margin: 40px;
-        width: 100%;
-        height: 22vh;
-        float: left;
-      }
-
-      #amane {
-        display: inline-block;
-        margin: 40px;
-        width: 100%;
-        height: 22vh;
-        float: left;
-      }
-
-      #kabanagu {
-        display: inline-block;
-        margin: 40px;
-        width: 100%;
-        height: 22vh;
-        float: right;
-      }
-
-      #quoree {
-        display: inline-block;
-        margin: 40px;
-        width: 100%;
-        height: 22vh;
-        float: right;
-      }
-
-      #yuigot {
-        display: inline-block;
-        margin: 40px;
-        width: 100%;
-        height: 22vh;
-        float: right;
-      }
-
-      #rotatingText {
-        animation-name: rotate-circle;
-        -webkit-animation-duration: 45s;
-        animation-duration: 45s;
-        -webkit-animation-timing-function: linear;
-        animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-      }
-
-      .box-container a:hover {
-        opacity: 0.5;
-        transition: 0.1s;
-      }
-
-      .page-2 {
-        height: 60vh;
-        width: 100vw;
-        position: relative;
-        display: inline-flex;
-      }
-
-      .box-container-2 {
-        height: 100%;
-        width: 40%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .box-container-2 p {
-        margin: 0;
-        font-weight: 400;
-        letter-spacing: 0.6px;
-        font-family: 'IBM Plex Sans JP', sans-serif;;
-        fill: #111;
-        font-size: 0.8rem;
-        font-weight: 400;
-        line-height: 30px;
-        letter-spacing: 0.4px;
-      }
-
-      .box-container-3 {
-        height: 100%;
-        width: 60%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
-
-      .pt-works {
-        margin: 0;
-        display: inline-block;
-        float: left;
-        position: relative;
-        width: 600px;
-        height: 80%;
-      }
-
-      #work-1 {
-        height: 500px;
-        width: 100%;
-        /* -webkit-align-self: center;
-        align-self: center; */
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-image: url("https://www.laforet.ne.jp/gb_summer2023/img/home/Ph_KeyVisual_PC.jpg");
-        cursor: pointer;
-      }
-
-      #work-2 {
-        height: 500px;
-        width: 100%;
-        /* -webkit-align-self: center;
-        align-self: center; */
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url("https://lh4.googleusercontent.com/8USY-raDsa7hcKTzSuIrNwHlfKkd1YqldDeWcUa1ul0izbYNXZmdpwVQwGOlK8sCMXrBjxA3Ka21262FVBJKqufB5dPS29ARUMUQTlPTyQH94njgbkALtHHwLJBRzwlCk4-gmb6bq5zN0QkorNjMcRR4_kLp9AZDfnkBf3ZXk2IoR0edIhK90-_W458aFQk=w1200-h630-p-k-no-nu");
-        cursor: pointer;
-      }
-
-      #work-3 {
-        height: 400px;
-        width: 100%;
-        /* -webkit-align-self: center;
-        align-self: center; */
-        background-size: 50%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-image: url("https://storage.spincoaster.com/media/2023/04/14194913/good-pop-for-you.jpg");
-        cursor: pointer;
-      }
-
-      .popup-message {
-        display: none;
-        padding: 20px;
-        max-width: 50%;
-        background-color: rgba(255, 255, 255, 0.92);
-
-        border-left: #555555 solid 0.1px;
-
-        /* position: fixed; */
-        width: 300px;
-        height: 280px;
-        z-index: 2;
-        text-align: justify;
-        font-weight: 300;
-        letter-spacing: -0.4px;
-        line-height: 18px;
-        font-size: 10px;
-        font-family: 'IBM Plex Sans JP', sans-serif;
-        overflow: scroll;
-      }
-
-      @media (min-width: 761px) {
-
-        @keyframes rotate-circle {
-          to {
-            transform: rotate(1turn);
-          }
-        }
-
-        #cover:hover {
-          transform: scale(1);
-        }
-
-        #cover-2:hover {
-          transform: scale(1);
-        }
-
-        .smartphone-msg {
-          display: none;
-        }
-
-      }
-
-      @media (max-width: 760px) {
-
-        #main-msg {
-            display: none;
-        }
-
-        .smartphone-msg {
-          position: fixed;
-          height: 100px;
-          width: 300px;
-          top: 10%;
-          left: calc(50vw - (width / 2));
-
-          font-family: 'Jost', sans-serif;
-          letter-spacing: 1.4px;
-          transform: scale(50%);
-        }
-
-        .text {
-          font-size: 0.2rem;
-          letter-spacing: 1.44px;
-        }
-
-        .circular-text {
-          font-size: 0.5rem;
-        }
-
-        .left-column {
-          display: none;
-        }
-
-        .right-column {
-          display: none;
-        }
-
-        .popup-message {
-          display: block;
-          position: absolute;
-          padding: 20px;
-          max-width: 50%;
-
-          width: 100%;
-          height: 340px;
-          z-index: 2;
-
-          background-color: rgba(255, 255, 255, 0.92);
-          border-left: #555555 solid 0.1px;
-
-          text-align: justify;
-          font-weight: 300;
-          letter-spacing: -0.4px;
-          line-height: 24px;
-          font-size: 10px;
-          font-family: 'IBM Plex Sans JP', sans-serif;
-          overflow: scroll;
-        }
-
-        .box-container {
-          height: 100vh;
-          width: 100vw;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .fa {
-          font-size: 1.5rem;
-          margin: auto;
-          width: 30px;
-          height: 30px;
-          text-align: center;
-          text-decoration: none;
-        }
-
-        .nav-left-elements {
-          position: absolute;
-          display: flex;
-          justify-content: flex-start;
-          margin: 0;
-          /* padding-left: 60px;
-          padding-top: 25px; */
-          width: 100%;
-          height: 100%;
-          text-align: left;
-          padding-left: 2vw;
-          left: 20px;
-        }
-
-        .nav-text {
-          display: flex;
-          height: 100%;
-          margin: 0;
-          align-items: center;
-          font-size: 8px;
-          font-weight: 200;
-        }
-
-        .nav-right-elements {
-          display: flex;
-          justify-content: flex-end;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          right: 0;
-          /* padding-left: 40vw; */
-          padding-right: 1vw;
-          align-items: center;
-          transition: 0.8s;
-        }
-
-        .socials {
-          display: flex;
-          opacity: 0;
-          height: 100%;
-          width: 300px;
-          margin: 0;
-        }
-
-        .container {
-          max-width: 1050px;
-          width: 90%;
-          margin: auto;
-        }
-
-      }
-
-      .box-container-2 {
-        height: 100%;
-        width: 40%;
-        display: flex;
-        margin: 25px;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .box-container-2 p {
-        margin: 0;
-        font-weight: 400;
-        font-family: 'IBM Plex Sans JP', sans-serif;;
-        fill: #111;
-        font-size: 0.6rem;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: -0.4px;
-      }
-
-      .img-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        width: 80px;
-        height: 100%;
-        margin: 0;
-        background-position: center;
-        background-image: url("imgs/logo.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-
   </style>
 
 
@@ -738,7 +36,7 @@
 
     <div class="nav-bar">
       <div class="nav-left-elements">
-        <span class="nav-text" id="replace-text" style="background-color:#ffffff; opacity:0.9;">>> featured</span>
+        <span class="nav-text" id="replace-text" style="opacity:0.9;">>> featured</span>
       </div>
 
       <!-- <div class="pasta-logo"> -->
@@ -771,38 +69,151 @@
 
       </div>
       <div class="top-middle">
-        <!-- <div class="smartphone-msg">
-          <p id="sub-text" style="cursor: default;">1st album</p><br>
+        <div class="smartphone-msg">
+          <!-- <p id="sub-text" style="cursor: default;">1st album</p><br>
           <p id="main-text" style="cursor: default;">GOOD POP</p><br>
-          <p id="sub-text-2" style="cursor: default;">out now!</p>
-        </div> -->
+          <p id="sub-text-2" style="cursor: default;">out now!</p> -->
+        </div>
 
         <div class="single-item">
           <a href="https://linkco.re/msP0HmAR" target="_blank" style="height: 100%"><div class="cover" id="cover" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a>
-          <!-- <a href="#" target="_blank" style="height: 100%"><div class="cover" id="cover-2" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a>
-          <a href="#" target="_blank" style="height: 100%"><div class="cover" id="cover-2" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a> -->
+          <a href="#" target="_blank" style="height: 100%"><div class="cover" id="cover-2" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a>
+          <!-- <a href="#" target="_blank" style="height: 100%"><div class="cover" id="cover-2" onmouseover="mouseon(this)" onmouseout="mouseoff(this)"></div></a> -->
         </div>
 
       </div>
+
       <div class="top-right">
       </div>
+
     </div>
 
     <div class="page-2">
 
       <div class="box-container-2">
-          <p>『PAS TASTA』 は<br>hirhiri, kabanagu, phritz, quoree, ウ山あまね, yuigot<br>の6人が音楽をする企画です。</p>
-      </div>
+        <div class="intro-large">
+          <p>PAS TASTA</p>
+        </div>
+        <div class="intro-small">
+          <p>a J-Pop project by Amane Uyama, Kabanagu, hirihiri, phritz, quoree & yuigot </p>
+        </div>
 
-      <div class="box-container-3">
-          <div class="pt-works">
-            <a href="https://www.youtube.com/watch?v=cgaYo5Sy8IA" target="_blank" style="height: 100%"><div id="work-2"></div></a>
-            <a href="https://x.com/pas_tasta/status/1676546686955708417?s=20" target="_blank" style="height: 100%"><div id="work-1"></div></a>
-            <a href="https://natalie.mu/music/news/516634" target="_blank"><div id="work-3"></div></a>
+            <div class="sakufu-1">
+              <a href="javascript:void(0);" onclick="amaneLayer()"> //stylish</a>
+            </div>
+
+            <div class="sakufu-2">
+              <a href="javascript:void(0);" onclick="hiriLayer()"> //simple</a>
+            </div>
+
+            <div class="sakufu-3">
+              <a href="javascript:void(0);" onclick="yuiLayer()"> //energetic</a>
+            </div>
+
+            <div class="sakufu-4">
+              <a href="javascript:void(0);" onclick="kabaLayer()"> //serious</a>
+            </div>
+
+            <div class="sakufu-5">
+              <a href="javascript:void(0);" onclick="quoLayer()"> //freestyle</a>
+            </div>
+        </div>
+
+        <script>
+
+        function amaneLayer() {
+          var check = document.getElementById("amanelayer").style.width;
+
+            if (check == "98%") {
+              document.getElementById("amanelayer").style.width = "0%";
+            }
+
+            else {
+              document.getElementById("amanelayer").style.width = "98%";
+            }
+        }
+        function hiriLayer() {
+          var check = document.getElementById("hirilayer").style.width;
+
+            if (check == "96%") {
+              document.getElementById("hirilayer").style.width = "0%";
+            }
+
+            else {
+              document.getElementById("hirilayer").style.width = "96%";
+            }
+        }
+        function yuiLayer() {
+          var check = document.getElementById("yuilayer").style.width;
+
+            if (check == "94%") {
+              document.getElementById("yuilayer").style.width = "0%";
+            }
+
+            else {
+              document.getElementById("yuilayer").style.width = "94%";
+            }
+        }
+        function kabaLayer() {
+          var check = document.getElementById("kabalayer").style.width;
+
+            if (check == "92%") {
+              document.getElementById("kabalayer").style.width = "0%";
+            }
+
+            else {
+              document.getElementById("kabalayer").style.width = "92%";
+            }
+        }
+        function quoLayer() {
+          var check = document.getElementById("quolayer").style.width;
+
+            if (check == "90%") {
+              document.getElementById("quolayer").style.width = "0%";
+            }
+
+            else {
+              document.getElementById("quolayer").style.width = "90%";
+            }
+        }
+
+        </script>
+
+        <div class="box-container-3">
+          <div class="artistpic">
           </div>
+
+            <div id="amanelayer">
+            <a href="javascript:void(0);" onclick="amaneLayer();" id="nav">></a>
+              <a href="https://www.youtube.com/shorts/7zTB4-1zNhs" target="_blank" class="stylish">
+              </a>
+              <a href="https://www.youtube.com/watch?v=Rfq7LixQp5M" target="_blank" class="stylish-2">
+              </a>
+            </div>
+            <div id="hirilayer">
+            <a href="javascript:void(0);" onclick="hiriLayer();" id="nav">></a>
+              <a href="https://www.youtube.com/watch?v=-wP1o-Q_5S4" target="_blank" class="simple-1">
+              </a>
+            </div>
+            <div id="yuilayer">
+            <a href="javascript:void(0);" onclick="yuiLayer();" id="nav">></a>
+              <a href="https://www.youtube.com/watch?v=WN56eRX6XmY" target="_blank" class="energetic-1"></a>
+              <a href="https://www.youtube.com/watch?v=iibN4VaReCw" target="_blank" class="energetic-2"></a>
+            </div>
+            <div id="kabalayer">
+            <a href="javascript:void(0);" onclick="kabaLayer();" id="nav">></a>
+              <a href="https://www.youtube.com/watch?v=WN56eRX6XmY" target="_blank" class="serious-1"></a>
+            </div>
+            <div id="quolayer">
+              <a href="javascript:void(0);" onclick="quoLayer();" id="nav">></a>
+              <a href="https://www.youtube.com/watch?v=fHZcNQZLg6s" target="_blank" class="free-1"></a>
+              <a href="https://www.youtube.com/watch?v=8fe-xBODpT4" target="_blank" class="free-2"></a>
+            </div>
       </div>
 
-    </div>
+      </div>
+
+
 
   <div class="box-container">
 

@@ -1139,6 +1139,8 @@ a:active {
     font-size: 1rem;
   }
   .intro-large p {
-    font-size: 4rem;
+    font-size: 2.5rem;
+    word-break: break-word;
+    line-height: 1.1em;
   }
 }

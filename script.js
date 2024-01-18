@@ -1,7 +1,7 @@
 
       const checkpoint = 1200;
-      const checkpoint2 = 300;
-      const checkpoint3 = 800;
+      const checkpoint2 = 400;
+      const checkpoint3 = 1200;
 
 
       document.addEventListener("DOMContentLoaded", () => {
@@ -21,10 +21,10 @@
           opacity = 1 - currentScroll / checkpoint2 ;
           social = 0;
           logo = 1 - currentScroll / checkpoint2 ;
-          replacetext.innerHTML = ">> featured";
+          // replacetext.innerHTML = ">> featured";
 
         } else  {
-          replacetext.innerHTML = ">> PAS TASTA works";
+          // replacetext.innerHTML = ">> PAS TASTA works";
           social = currentScroll / checkpoint2 - 1 ;
           logo = 0;
           opacity = 0;
@@ -172,7 +172,9 @@ $(document).ready(function(){
     infinite: true,
     dots: true,
     fade: true,
-    arrows: false
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2500
     })
 
   $('.pt-works').slick({
@@ -192,9 +194,9 @@ $(document).ready(function(){
     var currentSlide = $('.single-item').slick('slickCurrentSlide');
 
     if (currentSlide === 1) {
-          $('#sub-text').text('');
-          $('#main-text').text('');
-          $('#sub-text-2').text('coming soon...');
+          $('#sub-text').text('Remix Album');
+          $('#main-text').text('GOOD POP (THE REMIXES)');
+          $('#sub-text-2').text('out now!');
 
         } else {
           $('#sub-text').text('1st album');

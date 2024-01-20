@@ -1208,3 +1208,12 @@ background-size: contain;
 }
 
 }
+
+@media (max-width: 387px) {
+  * {
+    font-size: 0.8rem;
+  }
+
+  .text {
+   letter-spacing: 1.3px;
+  }
